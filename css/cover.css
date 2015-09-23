@@ -1,0 +1,155 @@
+/*
+ * Globals
+ */
+th {
+  text-align: center; 
+}
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #ccc;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  font-family: Verdana;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Tables */
+tr.tr-hover:hover {
+  color: black;
+  cursor: pointer;
+}
+
+tr.tr-hover:active {
+  color:  #e67e22;
+  cursor: pointer;
+}
+
+tr.tr-hoverP:hover {
+  color: black;
+  cursor: pointer;
+}
+
+tr.tr-hoverP:active {
+  color:  #9b59b6;
+  cursor: pointer;
+}
+
+/* Tables END*/
+
+h1.fuss-heading {
+	font-family: Anders;
+	font-size: 12em;
+	font-weight: bolder;
+  text-align: center;
+  padding-top: 10px;
+}
+
+p.songname {
+  color: #ccc;
+}
+
+.divider {
+  padding: 10px;
+}
+
+.spacer {
+  height: 30px;
+}
+
+/* Bottom Navigation*/
+.table {
+  display: table;   /* Allow the centering to work */
+  margin: 0 auto;
+}
+
+ul#horizontal-list {
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
+  }
+ul#horizontal-list li {
+    display: inline;
+  }
+
+.navigation {
+  font-size: 26px;
+  padding: 25px;
+  font-family: Anders;
+}
+.navigation:hover {
+  color: #000000;
+}
+.linkT:active {
+  color: #1abc9c;
+}
+.linkP:active {
+  color: #9b59b6;
+}
+.linkO:active {
+  color: #e67e22;
+}
+
+/* END Bottom Navigation*/
+
+
+/*Load Font*/
+@font-face{
+    font-family: "Anders";
+    src: url('Anders.ttf'),
+    url('Anders.eot'); /* IE */
+}
+
+/*ICONS*/
+a .fa {
+  color: white;
+  font-size: 2em;
+  margin: .45em;
+}
+
+a .fa-facebook:hover {
+  color: #1abc9c;
+}
+
+a .fa-music:hover {
+    color: #e67e22;
+}
+
+a .fa-shopping-cart:hover {
+    color: #9b59b6;
+}
+
+@media (max-width: 600px) {
+  h1.fuss-heading {
+    font-size: 5em;
+  }
+}
+
+@media (max-width: 992px) {
+  h1.fuss-heading {
+    font-size: 8em;
+  }
+}

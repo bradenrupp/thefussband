@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="The Fuss Band Site">
+  <meta name="author" content="Braden Rupp">
+
+  <title>The Fuss</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/cover.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    </head>
+
+    <body>
+
+      <div clas="site-wrapper">
+        <div class="container">
+
+          <h1 class="fuss-heading">THE</h1>
+          <h1 class="fuss-heading">FUSS</h1>
+
+          <hr class="divider">
+
+          <div id="music">
+            <audio src="music/attention.mp3" type="audio/mpeg" preload="auto" id="myTune"></audio>
+            <audio src="music/ghost.mp3" type="audio/mpeg" preload="auto" id="myTune"></audio>
+            <audio src="music/riley.mp3" type="audio/mpeg" preload="auto" id="myTune"></audio>
+          </div>
+
+          <div id="musicbuttons" class="buttons">
+            <button type="button" class="btn btn-default btn-lg button-skip-backward">
+              <span class="glyphicon glyphicon-fast-backward"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-lg button-pause">
+              <span class="glyphicon glyphicon-pause"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-lg button-stop">
+              <span class="glyphicon glyphicon-stop"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-lg button-play">
+              <span class="glyphicon glyphicon-play"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-lg button-skip-forward">
+              <span class="glyphicon glyphicon-fast-forward"></span>
+            </button>
+
+            <div id="songlist">
+              <p id="attention" class="songname">Attention</p>
+              <p id="ghost" class="songname">Riley</p>
+              <p id="riley" class="songname">Muse</p>
+            </div>
+
+            <div class="spacer"></div>
+          </div>
+
+          <div id="shows">
+           <h3>Shows</h3>
+           <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Venue</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tr-hover">
+                <td>Lefty's - $5</td>
+                <td>August 14th</td>
+              </tr>
+              <tr class="tr-hover">
+                <td>The Fremont - $5</td>
+                <td>August 21st</td>
+              </tr>
+              <tr class="tr-hover">
+                <td>Vaudeville - $5</td>
+                <td>Septemeber 3rd</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="members">
+         <h3>Members</h3>
+         <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Instrument</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tr-hoverP">
+              <td>Joey Lyons</td>
+              <td>Guitar/Vocals</td>
+            </tr>
+            <tr class="tr-hoverP">
+              <td>Matt Nelson</td>
+              <td>Bass Guitar</td>
+            </tr>
+            <tr class="tr-hoverP">
+              <td>Braden Rupp</td>
+              <td>Drums</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+          <div class="row">
+            <div id="toggleshows" class="col-md-4 navigation linkT">Shows</div>
+            <div id="togglemusic" class="col-md-4 navigation linkO">Music</div>
+            <div id="togglemembers" class="col-md-4 navigation linkP">Members</div>
+          </div>
+
+          <div>
+            <table style="margin: 0 auto;">
+              <tr>
+                <td><a href="https://www.facebook.com/whatsthefussabout">
+                  <i class="fa fa-facebook"></i>
+                </a></td> 
+                <td><a href="http://whatthefuss.bandcamp.com">
+                  <i class="fa fa-music"></i>
+                </a></td>
+                 <td><a href="https://www.example.com">
+                  <i class="fa fa-shopping-cart"></i>
+                </a></td>
+              </tr>
+            </table>
+          </div>
+
+          <a name="content"/>
+
+        </div> <!--End Container-->
+      </div>  <!--End Site Wrapper-->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="js/javascript.js"></script>
+  </body>
+  </html>
+
