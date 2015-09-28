@@ -46,7 +46,7 @@ $("#togglemusic").click(function() {
 
 // AUDIO PLAYER
 
-var audioElement = $("#myTune");
+var audioElement = [$("#myTune"), $("#myTune2")];
 var currentSongs = ["#attention", "#ghost", "#riley"];
 var songId = 0;
 
@@ -95,3 +95,4 @@ $(".button-pause").on("click", function() {
   };
 
   //AUDIO PLAYER END
+

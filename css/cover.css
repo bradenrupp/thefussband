@@ -21,6 +21,17 @@ a:hover {
   border: 1px solid #fff;
 }
 
+.modal-title {
+  color: black;
+}
+
+
+/*Spacing between collasped pictures*/
+[class*="col-"] {
+    background-clip: padding-box;
+    border: 10px solid transparent;
+}
+
 /*
  * Base structure
  */
@@ -95,23 +106,31 @@ ul#horizontal-list li {
     display: inline;
   }
 
-.navigation {
+.nav {
   font-size: 26px;
   padding: 25px;
   font-family: Anders;
+  cursor: pointer;
 }
-.navigation:hover {
-  color: #000000;
+
+.nav:active {
+  color: black;
 }
-.linkT:active {
+
+.shows-on {
   color: #1abc9c;
 }
-.linkP:active {
+
+
+.members-on {
   color: #9b59b6;
 }
-.linkO:active {
+
+
+.music-on {
   color: #e67e22;
 }
+
 
 /* END Bottom Navigation*/
 
