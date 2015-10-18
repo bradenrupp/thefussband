@@ -1,12 +1,13 @@
 //Controllers
 
-angular.module('musicApp', [])
-  .controller('toggleTitle', function($scope) {
+var myApp = angular.module('musicApp', []);
+
+  myApp.controller('toggleTitle', function($scope) {
 
   	$scope.showsToggle = false;
   	$scope.musicToggle = false;
   	$scope.membersToggle = false;
-
+    
     
     $scope.toggleShows = function () {
        	$scope.showsToggle = !$scope.showsToggle;
@@ -18,16 +19,19 @@ angular.module('musicApp', [])
     $scope.toggleMusic = function () {
   		$scope.musicToggle = !$scope.musicToggle;
   		$scope.showsToggle = false;
-       	$scope.membersToggle = false;
+      $scope.membersToggle = false;
+      $scope.playerToggle = !$scope.playerToggle;
     };
 
 	$scope.toggleMembers = function () {
   		$scope.membersToggle  = !$scope.membersToggle;
   		$scope.musicToggle = false;
-       	$scope.showsToggle = false;
+      $scope.showsToggle = false;
     };
 
-  }
 
-  );
+  
+
+  });
+
 
