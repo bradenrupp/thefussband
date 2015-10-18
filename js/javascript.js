@@ -6,7 +6,7 @@ $(document).ready(function(){
 	//Hide Contents
 
   $("#musicbuttons").hide();
-  $( "#members" ).hide();
+  $( "#photos" ).hide();
   $( "#shows" ).hide();
   $( "#songlist" ).hide();
   $( "#player" ).hide();
@@ -30,13 +30,13 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
      if (isDLViewable) {
       $("#playerdownload").fadeToggle();
      }; 
-      $( "#members" ).hide();
+      $( "#photos" ).hide();
       $( "#shows" ).hide();
       $( "#fu" ).css('color', '#e67e22')
   });
 
-  $("#togglemembers").click(function(){
-      $("#members").fadeToggle();
+  $("#togglephotos").click(function(){
+      $("#photos").fadeToggle();
       $( "#musicbuttons" ).hide();
       $( "#shows" ).hide();
       $("#player").hide();
@@ -52,7 +52,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   $("#toggleshows").click(function(){
       $("#shows").fadeToggle();
       $( "#musicbuttons" ).hide();
-      $( "#members" ).hide();
+      $( "#photos" ).hide();
       if (isDLViewable) {
               $("#playerdownload").hide();
      };
@@ -119,7 +119,7 @@ function scrollToAnchor(aid){
     $('html,body').animate({scrollTop: aTag.offset().top}, 1500);
 }
 
-$("#togglemembers").click(function() {
+$("#togglephotos").click(function() {
    scrollToAnchor('content');
 });
 $("#toggleshows").click(function() {

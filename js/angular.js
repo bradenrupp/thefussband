@@ -6,25 +6,25 @@ var myApp = angular.module('musicApp', []);
 
   	$scope.showsToggle = false;
   	$scope.musicToggle = false;
-  	$scope.membersToggle = false;
+  	$scope.photosToggle = false;
     
     
     $scope.toggleShows = function () {
        	$scope.showsToggle = !$scope.showsToggle;
        	$scope.musicToggle = false;
-       	$scope.membersToggle = false;
+       	$scope.photosToggle = false;
        	$scope.blur();
     };
 
     $scope.toggleMusic = function () {
   		$scope.musicToggle = !$scope.musicToggle;
   		$scope.showsToggle = false;
-      $scope.membersToggle = false;
+      $scope.photosToggle = false;
       $scope.playerToggle = !$scope.playerToggle;
     };
 
-	$scope.toggleMembers = function () {
-  		$scope.membersToggle  = !$scope.membersToggle;
+	$scope.togglePhotos = function () {
+  		$scope.photosToggle  = !$scope.photosToggle;
   		$scope.musicToggle = false;
       $scope.showsToggle = false;
     };

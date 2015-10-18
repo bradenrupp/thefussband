@@ -44,7 +44,7 @@
           <div class="row" ng-controller="toggleTitle">
             <div id="toggleshows" class="col-md-4 nav navigationT linkT" ng-click="toggleShows(this);" ng-class="{'shows-on' : showsToggle == true}">Shows</div>
             <div id="togglemusic" class="col-md-4 nav navigationO linkO" ng-click="toggleMusic(this);ShowHide()" ng-class="{'music-on' : musicToggle == true}">Music</div>
-            <div id="togglemembers" class="col-md-4 nav navigationP linkP" ng-click="toggleMembers(this)" ng-class="{'members-on' : membersToggle == true}">Members</div>
+            <div id="togglephotos" class="col-md-4 nav navigationP linkP" ng-click="togglePhotos(this)" ng-class="{'photos-on' : photos == true}">Photos</div>
           </div>
 
           <div id="music">
@@ -113,7 +113,7 @@
 
       <a name="content"/>
 
-      <div id="members">
+      <div id="photos">
        <div class="row">
         <div class="col-md-4">
           <a href="#" data-toggle="modal" data-target=".pop-up-joey">
