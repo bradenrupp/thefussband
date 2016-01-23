@@ -22,6 +22,11 @@
   <link href="css/cover.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+  <link rel="stylesheet" href="css/blueimp-gallery.min.css">
+  <link rel="stylesheet" href="css/blueimp-gallery-indicator.css">
+
+
+
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -44,7 +49,7 @@
           <div class="row" ng-controller="toggleTitle">
             <div id="toggleshows" class="col-md-4 nav navigationT linkT" ng-click="toggleShows(this);" ng-class="{'shows-on' : showsToggle == true}">Shows</div>
             <div id="togglemusic" class="col-md-4 nav navigationO linkO" ng-click="toggleMusic(this);ShowHide()" ng-class="{'music-on' : musicToggle == true}">Music</div>
-            <div id="togglephotos" class="col-md-4 nav navigationP linkP" ng-click="togglePhotos(this)" ng-class="{'photos-on' : photos == true}">Photos</div>
+            <div id="togglephotos" class="col-md-4 nav navigationP linkP" ng-click="togglePhotos(this)" ng-class="{'photos-on' : photosToggle == true}">Photos</div>
           </div>
 
           <div id="music">
@@ -79,151 +84,100 @@
           </div> <!-- End Music -->
 
           <div class="spacer"></div>
+
+          <div id="shows">
+           <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Bands</th>
+                <th>Where</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tr-hover">
+                <td>The Fuss</td>
+                <td>October 21st - Gas Lamp - Free</td>
+              </tr>
+              <tr class="tr-hover">
+                <td><span><a class="musicLink" href="https://www.facebook.com/holywhitehounds">Holy White Hounds</a></span> | <span><a class="musicLink" href="https://www.facebook.com/RedDaughters">Red Daughters</a></span>  | <span><a class="musicLink" href="https://www.facebook.com/brothersother">The Other Brothers</a></span>  | The Fuss</td>
+                <td>October 31st - Lefty's - $10 ($6 with costume)</td>
+              </tr>
+              <tr class="tr-hover">
+                <td>The Fuss - <span><a class="musicLink" href="https://www.facebook.com/PeasNCarrotMusic">Peas and Carrot</a></span></td>
+                <td>November 13th - Octopus (Cedar Falls) - Free</td>
+              </tr>
+              <tr class="tr-hover">
+                <td>The Fuss - <span><a class="musicLink" href="https://www.facebook.com/BrotherOBrother">Brother O' Brother</a></span> - <span><a class="musicLink" href="https://www.facebook.com/deadkingchuck">Dead King Chuck</a></span></td>
+                <td>December 12th - Gas Lamp - $5</td>
+              </tr>
+              <tr class="tr-hover">
+                <td> <span><a class="musicLink" href="https://www.facebook.com/commonkings">Common Kings</a></span> - The Fuss</td>
+                <td>March 18th - TBD</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div> <!-- End shows div -->
+
+        <a name="content"/>
+
+       
+
+        <div id="photos">
+
+           <div id="links">
+          <a href="images/joey.jpg" title="Joey | Guitar/Vocals">
+            <img src="images/thumbnails/joey_t.jpg" alt="Joey">
+          </a>
+          <a href="images/braden.jpg" title="Braden | Drums">
+            <img src="images/thumbnails/braden_t.jpg" alt="Braden">
+          </a>
+          <a href="images/matt.jpg" title="Matt | Bass">
+            <img src="images/thumbnails/matt_t.jpg" alt="matt">
+          </a>
+        </div>
+        <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+          <div class="slides"></div>
+          <h3 class="title"></h3>
+          <a class="prev">‹</a>
+          <a class="next">›</a>
+          <a class="close">×</a>
+          <a class="play-pause"></a>
+          <ol class="indicator"></ol>
         </div>
 
-        <div id="shows">
-         <table class="table table-hover">
-          <thead>
+
+
+
+        </div><!-- End photo div -->
+
+        <div id="bottomLinks"> 
+          <table style="margin: 0 auto;">
             <tr>
-              <th>Bands</th>
-              <th>Where</th>
+              <td><a href="https://www.facebook.com/whatsthefussabout">
+                <i class="fa fa-facebook"></i>
+              </a></td> 
+              <td><a href="https://twitter.com/wearethefuss">
+                <i class="fa fa-twitter"></i>
+              </a></td> 
+              <td id="toggleinstagram"><a href="https://instagram.com/wearethefuss">
+                <i class="fa fa-instagram"></i>
+              </a></td> 
+              <td><a href="http://whatthefuss.bandcamp.com">
+                <i class="fa fa-music"></i>
+              </a></td>
+              <td><a href="market.html">
+                <i class="fa fa-shopping-cart"></i>
+              </a></td>
             </tr>
-          </thead>
-          <tbody>
-            <tr class="tr-hover">
-              <td>The Fuss | Monica Laplante | Murder Shoes | Person Whale</td>
-              <td>August 21st</td>
-            </tr>
-            <tr class="tr-hover">
-              <td>The Fuss | Little Ruckus | Zigtebra | In Rooms | Erases Eraser</td>
-              <td>September 3rd - The Freemmont - Free</td>
-            </tr> 
-            <tr class="tr-hover">
-              <td>The Fuss</td>
-              <td>October 21st - Gas Lamp - Free</td>
-            </tr>
-            <tr class="tr-hover">
-              <td>Holy White Hounds| Red Daughters| The Other Brothers| The Fuss</td>
-              <td>October 31st - Lefty's - $10 ($6 with costume)</td>
-            </tr>
-          </tbody>
-        </table>
+          </table>
+        </div> <!-- END Bottom Page Links -->
 
-      </div>
+      </div>   <!--End Site-->
 
-      <a name="content"/>
-
-      <div id="photos">
-       <div class="row">
-        <div class="col-md-4">
-          <a href="#" data-toggle="modal" data-target=".pop-up-joey">
-            <img src="pics/joey_t.jpg"  class="img-responsive img-rounded center-block" alt="Joey - Guitary Vocals">
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="#" data-toggle="modal" data-target=".pop-up-braden">
-            <img src="pics/braden_t.jpg" class="img-responsive img-rounded center-block" alt="Braden - Drums">
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="#" data-toggle="modal" data-target=".pop-up-matt">
-            <img src="pics/matt_t.jpg" class="img-responsive img-rounded center-block" alt="Matt - Bass Guitar">
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modals -->
-    <div class="modal fade pop-up-joey" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="myLargeModalLabel-1">Joey Lyons | Guitar/Vocals</h4>
-          </div>
-          <div class="modal-body">
-            <img src="pics/joey.jpg" class="img-responsive img-rounded center-block" alt="">
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal mixer image -->
-
-    <div class="modal fade pop-up-braden" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="myLargeModalLabel-1">Braden Rupp | Drums</h4>
-          </div>
-          <div class="modal-body">
-            <img src="pics/braden.jpg" class="img-responsive img-rounded center-block" alt="">
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal mixer image -->
-
-    <div class="modal fade pop-up-matt" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h4 class="modal-title" id="myLargeModalLabel-1">Matt Nelson | Bass Guitar</h4>
-          </div>
-          <div class="modal-body">
-            <img src="pics/matt.jpg" class="img-responsive img-rounded center-block" alt="">
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal mixer image -->
-
-    <div>
-      <table style="margin: 0 auto;">
-        <tr>
-          <td><a href="https://www.facebook.com/whatsthefussabout">
-            <i class="fa fa-facebook"></i>
-          </a></td> 
-          <td><a href="https://twitter.com/wearethefuss">
-            <i class="fa fa-twitter"></i>
-          </a></td> 
-          <td id="toggleinstagram"><a href="#">
-            <i class="fa fa-instagram"></i>
-          </a></td> 
-          <td><a href="http://whatthefuss.bandcamp.com">
-            <i class="fa fa-music"></i>
-          </a></td>
-          <td><a href="market.html">
-            <i class="fa fa-shopping-cart"></i>
-          </a></td>
-        </tr>
-      </table>
-
-    </div>
-
-  </div>
-
-  <div id="instagramfeed">
-    <div align="center" class="row">
-      <div clas="col-md-2"><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/8swVVig7DW/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Here is the debut of our second EP. It&#39;s called Two. As always, it&#39;s completely free to anyone who would like to own it. The link is on our homepage. Love, The Fuss &lt;3</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by The Fuss (@wearethefuss) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-10-11T13:39:36+00:00">Oct 11, 2015 at 6:39am PDT</time></p></div></blockquote>
-      <script async defer src="//platform.instagram.com/en_US/embeds.js"></script></div>
-      <div clas="col-md-2"><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/8j6-cCA7KX/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Keep things in perspective yeah #forksarentsafe #rocknroll #thefuss</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by The Fuss (@wearethefuss) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-10-08T03:19:25+00:00">Oct 7, 2015 at 8:19pm PDT</time></p></div></blockquote>
-      <script async defer src="//platform.instagram.com/en_US/embeds.js"></script></div>
-      <div clas="col-md-2"><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/8ZSzSRg7PP/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Paint on they mustache. #vicmensa</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A video posted by The Fuss (@wearethefuss) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-10-04T00:15:58+00:00">Oct 3, 2015 at 5:15pm PDT</time></p></div></blockquote>
-      <script async defer src="//platform.instagram.com/en_US/embeds.js"></script></div>
-      <div clas="col-md-2"><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:33.3796296296% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/8Or7FTg7Nn/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Still reeling from that Sparkle Sparkle release show. #holywhitehounds #sparklesparkle #woolys #forksarentsafe</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by The Fuss (@wearethefuss) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-09-29T21:23:51+00:00">Sep 29, 2015 at 2:23pm PDT</time></p></div></blockquote>
-      <script async defer src="//platform.instagram.com/en_US/embeds.js"></script></div>
-      <div clas="col-md-2"><blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:400px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/8HKzefg7CZ/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Thanks to the guys @tokandroll for snapping this shot at Vaudeville Mews this Wednesday. Very badass dudes, and not one homely member &lt;3</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A photo posted by The Fuss (@wearethefuss) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-09-26T23:19:46+00:00">Sep 26, 2015 at 4:19pm PDT</time></p></div></blockquote>
-      <script async defer src="//platform.instagram.com/en_US/embeds.js"></script></div>
-
-    </div>
-
-    <div><br>
-      <div ><a id="backtosite" href="#"><i class="fa fa-arrow-left"></i></a><br><br></div>
-      <a href="https://instagram.com/wearethefuss/">instagram.com/wearethefuss</a>
-    </div>
-  </div>
-
-</div> <!--End Container-->
-</div>  <!--End Site Wrapper-->
+    </div> <!--End Container-->
+  </div>  <!--End Site Wrapper-->
 
 
     <!-- Bootstrap core JavaScript
@@ -233,9 +187,22 @@
     <script type="text/javascript" src="css/jquery-ui-1.11.4-2.custom/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
+    <script src="js/blueimp-gallery.js"></script>
+    <script src="js/blueimp-gallery-fullscreen.js"></script>
+    <script src="js/blueimp-gallery-indicator.js"></script>
     <script src="js/javascript.js"></script>
     <script src="js/angular.js"></script>
+
+    <script>
+    document.getElementById('links').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement,
+      link = target.src ? target.parentNode : target,
+      options = {index: link, event: event},
+      links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+    };
+    </script>
 
   </body>
   </html>

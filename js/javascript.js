@@ -6,13 +6,14 @@ $(document).ready(function(){
 	//Hide Contents
 
   $("#musicbuttons").hide();
-  $( "#photos" ).hide();
+  // $( "#photos" ).hide();
   $( "#shows" ).hide();
   $( "#songlist" ).hide();
   $( "#player" ).hide();
   $( "#playertitle" ).hide();
   $( "#playerdownload" ).hide();
   $( "#instagramfeed" ).hide();
+  $( "#links" ).hide();
 
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -25,7 +26,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
   $("#togglemusic").click(function(){
       $("#musicbuttons").fadeToggle();
-      $("#player").fadeToggle();
+      $("#player").show();
       $("#playertitle").fadeToggle();
      if (isDLViewable) {
       $("#playerdownload").fadeToggle();
@@ -37,6 +38,8 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
   $("#togglephotos").click(function(){
       $("#photos").fadeToggle();
+        $( "#links" ).show();
+
       $( "#musicbuttons" ).hide();
       $( "#shows" ).hide();
       $("#player").hide();
@@ -53,33 +56,14 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
       $("#shows").fadeToggle();
       $( "#musicbuttons" ).hide();
       $( "#photos" ).hide();
+           $("#player").hide();
+      $("#playertitle").hide();
       if (isDLViewable) {
               $("#playerdownload").hide();
      };
       $( "#the" ).css('color', '#1abc9c')
 
   });
-  $("#toggleinstagram").click(function(){
-    if (!isFeedOn) {
-      $( "#site" ).hide();
-      $("#instagramfeed").fadeToggle();
-      $( ".fa-instagram" ).css( "color", "black" );
-      isFeedOn = true;
-    };
-      
-  }); 
-
-  $("#backtosite").click(function(){
-      $( "#site" ).fadeToggle();
-      $("#instagramfeed").hide();
-      $( ".fa-instagram" ).css( "color", "white" );      
-      isFeedOn = false;
-
-
-  });
-
-
-
 
     // initialization - first element in playlist
     initAudio($('.playlist li:first-child'));
@@ -145,7 +129,7 @@ $("#togglemusic").click(function() {
 
         $('.player .title').text(title);
         $('.player .artist').text(artist);
-        $('.player .cover').css('background-image','url(pics/' + cover+')');;
+        $('.player .cover').css('background-image','url(images/' + cover+')');;
 
         song = new Audio('music/' + url);
 

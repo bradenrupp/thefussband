@@ -37,6 +37,10 @@ a:hover {
   color: gray;
 }
 
+a.musicLink {
+  color: #fff;
+}
+
 
 /*Spacing between collasped pictures*/
 [class*="col-"] {
@@ -61,10 +65,16 @@ body {
 }
 
 /* Tables */
+tr.tr-hover:hover a {
+  color: black;
+  cursor: pointer;
+}
+
 tr.tr-hover:hover {
   color: black;
   cursor: pointer;
 }
+
 
 tr.tr-hover:active {
   color:  #e67e22;
@@ -190,6 +200,10 @@ a .fa-shopping-cart:hover {
     color: #9b59b6;
 }
 
+.fa-camera-retro {
+  font-size: 26px;
+}
+
 @media (max-width: 600px) {
   h1.fuss-heading {
     font-size: 5em;
@@ -209,7 +223,7 @@ a .fa-shopping-cart:hover {
     width: 400px;
 }
 .player {
-    background: transparent url("../pics/spr.png") no-repeat scroll center top;
+    background: transparent url("../images/spr.png") no-repeat scroll center top;
     height: 162px;
     position: relative;
     width: 326px;
@@ -236,7 +250,7 @@ a .fa-shopping-cart:hover {
     top: 40px;
 }
 .pl {
-    background: transparent url("../pics/spr.png") no-repeat scroll -274px -175px;
+    background: transparent url("../images/spr.png") no-repeat scroll -274px -175px;
     cursor: pointer;
     height: 34px;
     left: 270px;
@@ -248,7 +262,7 @@ a .fa-shopping-cart:hover {
     top: 21px;
 }
 .cover {
-    background: transparent url(../pics/cover.jpg) no-repeat scroll center top;
+    background: transparent url(../images/cover.jpg) no-repeat scroll center top;
     border-radius: 5px 5px 5px 5px;
     height: 94px;
     left: 60px;
@@ -265,7 +279,7 @@ a .fa-shopping-cart:hover {
     width: 138px;
 }
 .controls .play, .controls .pause, .controls .rew, .controls .fwd {
-    background: transparent url("../pics/spr.png") no-repeat scroll 0 0;
+    background: transparent url("../images/spr.png") no-repeat scroll 0 0;
     float: left;
     height: 100%;
     width: 33%;
@@ -316,7 +330,7 @@ a .fa-shopping-cart:hover {
     width: 285px;
 }
 .ui-slider-range {
-    background: transparent url("../pics/spr.png") no-repeat scroll 5px -222px;
+    background: transparent url("../images/spr.png") no-repeat scroll 5px -222px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -331,7 +345,7 @@ a .fa-shopping-cart:hover {
     z-index: 2;
 }
 .volume .ui-slider-handle {
-    background: url("../pics/spr.png") no-repeat scroll -201px -188px rgba(0, 0, 0, 0);
+    background: url("../images/spr.png") no-repeat scroll -201px -188px rgba(0, 0, 0, 0);
     height: 13px;
     width: 13px;
 }
