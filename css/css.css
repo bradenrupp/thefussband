@@ -129,8 +129,7 @@ ul#horizontal-list li {
   }
 
 .nav {
-  font-size: 26px;
-  padding: 25px;
+  font-size: 22px;
   font-family: Anders;
   cursor: pointer;
 }
@@ -172,6 +171,20 @@ ul#horizontal-list li {
     src: url('Anders.ttf'),
     url('Anders.eot'); /* IE */
 }
+/*Load Font End*/
+
+.show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.show-hide.ng-hide {
+  opacity:0;
+  -webkit-transition:all linear 0.0s;
+  transition:all linear 0.0s;
+}
+
+
 
 /*ICONS*/
 a .fa {
@@ -215,6 +228,7 @@ a .fa-shopping-cart:hover {
     font-size: 8em;
   }
 }
+/*ICONS END*/ 
 
 
 /*player*/

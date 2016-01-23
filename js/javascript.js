@@ -1,69 +1,13 @@
-//Document Ready
-
+//GLOBALS
 var isDLViewable = true;
-var isFeedOn = false;
+
+//Document Ready
 $(document).ready(function(){
-	//Hide Contents
 
-  $("#musicbuttons").hide();
-  // $( "#photos" ).hide();
-  $( "#shows" ).hide();
-  $( "#songlist" ).hide();
-  $( "#player" ).hide();
-  $( "#playertitle" ).hide();
-  $( "#playerdownload" ).hide();
-  $( "#instagramfeed" ).hide();
-  $( "#links" ).hide();
-
-
+//CONTROL Download view
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-   $( "#volume" ).hide();
    isDLViewable = false;
-
 }
-
-
-
-  $("#togglemusic").click(function(){
-      $("#musicbuttons").fadeToggle();
-      $("#player").show();
-      $("#playertitle").fadeToggle();
-     if (isDLViewable) {
-      $("#playerdownload").fadeToggle();
-     }; 
-      $( "#photos" ).hide();
-      $( "#shows" ).hide();
-      $( "#fu" ).css('color', '#e67e22')
-  });
-
-  $("#togglephotos").click(function(){
-      $("#photos").fadeToggle();
-        $( "#links" ).show();
-
-      $( "#musicbuttons" ).hide();
-      $( "#shows" ).hide();
-      $("#player").hide();
-      $("#playertitle").hide();
-      if (isDLViewable) {
-              $("#playerdownload").hide();
-     }; 
-      $("#playerdownload").hide();
-      $( "#ss" ).css('color', '#9b59b6')
-
-  });
-
-  $("#toggleshows").click(function(){
-      $("#shows").fadeToggle();
-      $( "#musicbuttons" ).hide();
-      $( "#photos" ).hide();
-           $("#player").hide();
-      $("#playertitle").hide();
-      if (isDLViewable) {
-              $("#playerdownload").hide();
-     };
-      $( "#the" ).css('color', '#1abc9c')
-
-  });
 
     // initialization - first element in playlist
     initAudio($('.playlist li:first-child'));

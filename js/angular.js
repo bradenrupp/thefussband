@@ -1,12 +1,14 @@
 //Controllers
 
-var myApp = angular.module('musicApp', []);
+var myApp = angular.module('musicApp', ['ngAnimate']);
 
-  myApp.controller('toggleTitle', function($scope) {
+  myApp.controller('toggleTitle', ['$scope', '$location', '$anchorScroll', 
+    function($scope, $location, $anchorScroll) {
 
   	$scope.showsToggle = false;
   	$scope.musicToggle = false;
-  	$scope.photosToggle = false;
+    $scope.photosToggle = false;
+  	$scopesDLViewable = true;
     
     
     $scope.toggleShows = function () {
@@ -29,9 +31,13 @@ var myApp = angular.module('musicApp', []);
       $scope.showsToggle = false;
     };
 
+    $scope.displayDownload = function () {
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $scope.isDLViewable = false;
+      }
+    };
 
-  
 
-  });
+  }]);
 
 
