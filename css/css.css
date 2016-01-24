@@ -41,7 +41,6 @@ a.musicLink {
   color: #fff;
 }
 
-
 /*Spacing between collasped pictures*/
 [class*="col-"] {
     background-clip: padding-box;
@@ -54,21 +53,25 @@ a.musicLink {
 
 html,
 body {
-  background-color: #333;
   font-family: Verdana;
-  height: 100%
-
-}
-html {
+  height: 100%;
 }
 
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  background: url(../images/matt-joey.jpg),
-  url(../images/joey.jpg) no-repeat center center; 
-  background-size: cover;
+}
+
+img.bg {
+ position: fixed; 
+  top: 0; 
+  left: 0; 
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 
 /* Tables */
@@ -184,6 +187,14 @@ border-color: #fff;
   padding: 0px;
 }
 
+/*SHOWS END*/
+
+
+/*Photos*/
+
+.photo-width {
+  width: 100%;
+}
 
 
 /* Bottom Navigation*/
@@ -203,6 +214,7 @@ ul#horizontal-list li {
 
 .nav {
   font-size: 22px;
+  font-weight: bold;
   font-family: Anders;
   cursor: pointer;
 }
@@ -256,8 +268,7 @@ ul#horizontal-list li {
   -webkit-transition:all linear 0.0s;
   transition:all linear 0.0s;
 }
-
-
+/* End Load Font*/
 
 /*ICONS*/
 a .fa {
