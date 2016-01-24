@@ -54,14 +54,21 @@ a.musicLink {
 
 html,
 body {
-  height: 100%;
   background-color: #333;
   font-family: Verdana;
+  height: 100%
+
 }
+html {
+}
+
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  background: url(../images/matt-joey.jpg),
+  url(../images/joey.jpg) no-repeat center center; 
+  background-size: cover;
 }
 
 /* Tables */
@@ -112,6 +119,72 @@ p.songname {
 .spacer {
   height: 30px;
 }
+
+/*SHOWS*/
+.datebox {
+  margin: 0 auto;
+  padding: 0px;
+height: 61px;  
+width: 50px;  
+border-style: solid;
+border-color: #fff;
+}
+
+.datebox-month {
+  padding: 0px;
+  margin: 0px;
+  font-size: 10px;
+  color: #fff;
+  background-color: #000;
+}
+
+.datebox-date {
+    padding: 0px;
+    padding-top: 2px;
+  margin: 0px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #000;
+}
+.datebox-day {
+  font-size: 10px;
+}
+
+.bands {
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 15px;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .bands {
+  font-size: 10px;
+  text-align: left;
+  }
+}
+
+.band-row {
+  text-align: center;
+  background-color: #000;
+  opacity: .8;
+}
+
+.band-divider {
+  width: 75%;
+}
+
+#shows {
+  text-align: center;
+}
+
+.pre-scrollable {
+  margin: 0px;
+  padding: 0px;
+}
+
+
 
 /* Bottom Navigation*/
 .table {

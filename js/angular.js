@@ -8,14 +8,13 @@ var myApp = angular.module('musicApp', ['ngAnimate']);
   	$scope.showsToggle = false;
   	$scope.musicToggle = false;
     $scope.photosToggle = false;
-  	$scopesDLViewable = true;
+  	$scope.isDLViewable = true;
     
     
     $scope.toggleShows = function () {
        	$scope.showsToggle = !$scope.showsToggle;
        	$scope.musicToggle = false;
        	$scope.photosToggle = false;
-       	$scope.blur();
     };
 
     $scope.toggleMusic = function () {
@@ -36,7 +35,6 @@ var myApp = angular.module('musicApp', ['ngAnimate']);
         $scope.isDLViewable = false;
       }
     };
-
 
   }]);
 

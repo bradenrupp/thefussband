@@ -33,13 +33,13 @@
 
   <body ng-app="musicApp">
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div clas="site-wrapper">
       <div class="container-fluid" ng-controller="toggleTitle">
@@ -50,7 +50,7 @@
 
           <hr class="divider">
 
-          <div class="row" >
+          <div id="navlinks" class="row" >
             <div id="toggleshows" class="col-xs-4 nav navigationT linkT" ng-click="toggleShows(this);" ng-class="{'shows-on' : showsToggle == true}">Shows</div>
             <div id="togglemusic" class="col-xs-4 nav navigationO linkO" ng-click="toggleMusic(this);ShowHide()" ng-class="{'music-on' : musicToggle == true}">Music</div>
             <div id="togglephotos" class="col-xs-4 nav navigationP linkP" ng-click="togglePhotos(this)" ng-class="{'photos-on' : photosToggle == true}">Photos</div>
@@ -91,87 +91,136 @@
 
           <div class="spacer"></div>
 
-          <div id="shows" class="show-hide" ng-show="showsToggle">
-           <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Bands</th>
-                <th>Where</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="tr-hover">
-                <td>The Fuss</td>
-                <td>October 21st - Gas Lamp - Free</td>
-              </tr>
-              <tr class="tr-hover">
-                <td><span><a class="musicLink" href="https://www.facebook.com/holywhitehounds">Holy White Hounds</a></span> | <span><a class="musicLink" href="https://www.facebook.com/RedDaughters">Red Daughters</a></span>  | <span><a class="musicLink" href="https://www.facebook.com/brothersother">The Other Brothers</a></span>  | The Fuss</td>
-                <td>October 31st - Lefty's - $10 ($6 with costume)</td>
-              </tr>
-              <tr class="tr-hover">
-                <td>The Fuss - <span><a class="musicLink" href="https://www.facebook.com/PeasNCarrotMusic">Peas and Carrot</a></span></td>
-                <td>November 13th - Octopus (Cedar Falls) - Free</td>
-              </tr>
-              <tr class="tr-hover">
-                <td>The Fuss - <span><a class="musicLink" href="https://www.facebook.com/BrotherOBrother">Brother O' Brother</a></span> - <span><a class="musicLink" href="https://www.facebook.com/deadkingchuck">Dead King Chuck</a></span></td>
-                <td>December 12th - Gas Lamp - $5</td>
-              </tr>
-              <tr class="tr-hover">
-                <td> <span><a class="musicLink" href="https://www.facebook.com/commonkings">Common Kings</a></span> - The Fuss</td>
-                <td>March 18th - TBD</td>
-              </tr>
-            </tbody>
-          </table>
+          <div id="shows" class="show-hide pre-scrollable" ng-show="showsToggle">
 
+
+           <div class="row band-row">
+            <div class="col-xs-2">
+              <div class="datebox">
+                <div class="datebox-month">FEB</div>
+                <div class="datebox-date">19th <br> 
+                  <span class="datebox-day">SAT</span></div>
+              </div>
+            </div>
+            <div class="col-xs-3 bands">
+             <i class="fa fa-location-arrow"></i> Lefty's Live Music
+            </div>
+            <div class="col-xs-7">
+              <div class="bands">
+              The Fuss | Ira Grace & The Bible Belt Prophets | The Shameless Pursuit
+              </div>
+            </div>
+          </div>
+
+          <hr class="band-divider">
+
+          <div class="row band-row">
+            <div class="col-xs-2">
+              <div class="datebox">
+                <div class="datebox-month">DEC</div>
+                <div class="datebox-date">12th <br> 
+                  <span class="datebox-day">SAT</span></div>
+              </div>
+            </div>
+            <div class="col-xs-3 bands">
+            <i class="fa fa-location-arrow"></i> Gas Lamp
+            </div>
+            <div class="col-xs-7">
+              <div class="bands">
+              The Fuss - Brother O' Brother - Dead King Chuck
+              </div>
+            </div>
+          </div>
+
+          <hr class="band-divider">
+
+                    <div class="row band-row">
+            <div class="col-xs-2">
+              <div class="datebox">
+                <div class="datebox-month">OCT</div>
+                <div class="datebox-date">31st <br> 
+                  <span class="datebox-day">SAT</span></div>
+              </div>
+            </div>
+            <div class="col-xs-3 bands">
+              <i class="fa fa-location-arrow"></i> Lefty's Live Music
+            </div>
+            <div class="col-xs-7">
+              <div class="bands">
+              Holy White Hounds | Red Daughters | The Other Brothers | The Fuss
+              </div>
+            </div>
+          </div>
+
+
+          <hr class="band-divider">
+
+          <div class="row band-row">
+            <div class="col-xs-2">
+              <div class="datebox">
+                <div class="datebox-month">OCT</div>
+                <div class="datebox-date">21st <br> 
+                  <span class="datebox-day">WED</span></div>
+              </div>
+            </div>
+            <div class="col-xs-3 bands">
+            <i class="fa fa-location-arrow"></i> Gas Lamp
+            </div>
+            <div class="col-xs-7">
+              <div class="bands">
+              The Fuss - Brother O' Brother - Dead King Chuck
+              </div>
+            </div>
+          </div>
         </div> <!-- End shows div -->
 
         <div id="photos" class="show-hide" ng-show="photosToggle">
 
           <div id="links">
-          <a href="images/joey.jpg" title="Joey | Guitar/Vocals">
-            <img src="images/thumbnails/joey_t.jpg" alt="Joey">
-          </a>
-          <a href="images/braden.jpg" title="Braden | Drums">
-            <img src="images/thumbnails/braden_t.jpg" alt="Braden">
-          </a>
-          <a href="images/matt.jpg" title="Matt | Bass">
-            <img src="images/thumbnails/matt_t.jpg" alt="matt">
-          </a>
-          <a href="images/gaslamp.jpg" title="GasLamp">
-            <img src="images/thumbnails/gaslamp_t.jpg" alt="matt">
-          </a>
-          <a href="images/hounds-show.jpg" title="Holy White Hounds Cd Release">
-            <img src="images/thumbnails/hounds-show_t.jpg" alt="hounds cd release show">
-          </a>
-          <a href="images/joey-sing.jpg" title="Joey">
-            <img src="images/thumbnails/joey-sing_t.jpg" alt="joey">
-          </a>
-          <a href="images/braden-record.jpg" title="Braden">
-            <img src="images/thumbnails/braden-record_t.jpg" alt="braden">
-          </a>
-          <a href="images/matt-joey.jpg" title="Matt - Joey">
-            <img src="images/thumbnails/matt-joey_t.jpg" alt="matt and joey">
-          </a>
-          <a href="images/mirror.jpg" title="The Fuss">
-            <img src="images/thumbnails/mirror_t.jpg" alt="the fuss">
-          </a>
-          <a href="images/phonebooth.jpg" title="Vaudeville Mews">
-            <img src="images/thumbnails/phonebooth_t.jpg" alt="vaudeville mews">
-          </a>
-          <a href="images/show.jpg" title="Lefty's">
-            <img src="images/thumbnails/show_t.jpg" alt="lefty's">
-          </a>
-        </div>
-        <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-          <div class="slides"></div>
-          <h3 class="title"></h3>
-          <a class="prev">‹</a>
-          <a class="next">›</a>
-          <a class="close">×</a>
-          <a class="play-pause"></a>
-          <ol class="indicator"></ol>
-        </div>
+            <a href="images/joey.jpg" title="Joey | Guitar/Vocals">
+              <img src="images/thumbnails/joey_t.jpg" alt="Joey">
+            </a>
+            <a href="images/braden.jpg" title="Braden | Drums">
+              <img src="images/thumbnails/braden_t.jpg" alt="Braden">
+            </a>
+            <a href="images/matt.jpg" title="Matt | Bass">
+              <img src="images/thumbnails/matt_t.jpg" alt="matt">
+            </a>
+            <a href="images/gaslamp.jpg" title="GasLamp">
+              <img src="images/thumbnails/gaslamp_t.jpg" alt="matt">
+            </a>
+            <a href="images/hounds-show.jpg" title="Holy White Hounds Cd Release">
+              <img src="images/thumbnails/hounds-show_t.jpg" alt="hounds cd release show">
+            </a>
+            <a href="images/joey-sing.jpg" title="Joey">
+              <img src="images/thumbnails/joey-sing_t.jpg" alt="joey">
+            </a>
+            <a href="images/braden-record.jpg" title="Braden">
+              <img src="images/thumbnails/braden-record_t.jpg" alt="braden">
+            </a>
+            <a href="images/matt-joey.jpg" title="Matt - Joey">
+              <img src="images/thumbnails/matt-joey_t.jpg" alt="matt and joey">
+            </a>
+            <a href="images/mirror.jpg" title="The Fuss">
+              <img src="images/thumbnails/mirror_t.jpg" alt="the fuss">
+            </a>
+            <a href="images/phonebooth.jpg" title="Vaudeville Mews">
+              <img src="images/thumbnails/phonebooth_t.jpg" alt="vaudeville mews">
+            </a>
+            <a href="images/show.jpg" title="Lefty's">
+              <img src="images/thumbnails/show_t.jpg" alt="lefty's">
+            </a>
+          </div>
+          <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+          <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+          </div>
 
         </div><!-- End photo div -->
 
