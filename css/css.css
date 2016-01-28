@@ -315,6 +315,81 @@ a .fa-shopping-cart:hover {
 /*ICONS END*/ 
 
 
+/*CARD FLIP */
+
+
+.al-cover {
+  height: 315;
+  width: 315;
+}
+
+.flip {
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  -moz-perspective: 800;
+  -o-perspective: 800;
+   width: 300px;
+   height: 300px;
+   margin: 25px auto;
+}
+.flip .card.flipped {
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+}
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+  -ms-transform-style: preserve-3d;
+  -ms-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+  -o-transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+.flip .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  font-family: Georgia;
+  text-align: center;
+  backface-visibility: hidden;  /* W3C */
+  -webkit-backface-visibility: hidden; /* Safari & Chrome */
+  -moz-backface-visibility: hidden; /* Firefox */
+  -ms-backface-visibility: hidden; /* Internet Explorer */
+  -o-backface-visibility: hidden; /* Opera */
+
+}
+.flip .card .front {
+  /*position: absolute;*/
+  z-index: 1;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+.flip .card .back {
+    background: blue;
+    background: white;
+    color: black;
+    cursor: pointer;
+    
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+
+}
+
+/*CARD FLIP END*/
+
 /*player*/
 .example {
     margin: 50px auto 0;
@@ -330,7 +405,6 @@ a .fa-shopping-cart:hover {
 .title, .artist {
     font-family: verdana;
     left: 167px;
-    position: absolute;
 
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -448,21 +522,56 @@ a .fa-shopping-cart:hover {
     width: 13px;
 }
 .playlist {
-    background-color: #333333;
+    background-color: #000;
     border-radius: 5px 5px 5px 5px;
     list-style-type: none;
-    margin: -10px 0 0 2px;
-    padding-bottom: 10px;
-    padding-top: 15px;
-    position: relative;
-    width: 326px;
-    z-index: 1;
+    height: 300px;
+    padding: 5px;
+    font-size: 24px;
+    opacity: .9;
+    text-align: left;
 }
 .playlist li {
     color: #EEEEEE;
     cursor: pointer;
-    margin: 0 0 5px 15px;
+    padding: 0px;
+    margin: 0px;
+    height: 75px;
+    z-index: 3;
 }
 .playlist li.active {
     font-weight: bold;
+}
+
+#footerSlideContainer {
+  background-color: #000;
+  opacity: .9;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+}
+
+#show-music-btn {
+  opacity: .9;
+  position: fixed;
+  bottom:0;
+}
+#footerSlideButton {
+  border: none;
+  cursor: pointer;
+}
+#footerSlideContent {
+  width: 100%;
+  color: #CCCCCC;
+  font-size: 0.8em;
+  border: none;
+  font-family: DejaVuSansBook, Sans-Serif;
+}
+
+#videoModal {
+  background-color:rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }

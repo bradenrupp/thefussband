@@ -33,6 +33,21 @@
 
   <body ng-app="musicApp">
 
+    <!-- Modal content-->
+<!--     <div id="videoModal">
+
+      <div id="blueimp-video-carousel" class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="play-pause"></a>
+      </div> 
+    <div id="modalClose"><i class="fa fa-2x fa-times"></i></div>
+
+    </div> -->
+
+
     <img src="images/matt-joey.jpg" class="bg">
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -58,13 +73,12 @@
             <div id="togglephotos" class="col-xs-4 nav navigationP linkP" ng-click="togglePhotos(this)" ng-class="{'photos-on' : photosToggle == true}">Photos</div>
           </div>
 
-          <a id="content"></a> 
+          <a name="content"></a>
 
-          <div id="music" class="show-hide" ng-show="musicToggle">
 
-            <div id="playertitle"><h4><span class="album">The Fuss </span> <span class="divider">|</span> <span class="album">"Two"</span></h4></div>
+          <div id="music" class="show-hide center" ng-show="musicToggle">
 
-            <div id="player" class="player center">
+<!--             <div id="player" class="player center">
               <div class="pl"></div>
               <div class="title"></div>
               <div class="artist"></div>
@@ -77,7 +91,60 @@
               </div>
               <div id ="volume" class="volume" ng-show="isDLViewable"></div>
               <div class="tracker"></div>
+            </div> -->
+
+            <div class="row">
+
+              <div class="col-md-4 al-cover">
+                <div class="flip"> 
+                  <div class="card"> 
+                    <div class="face front"><img src="images/one.jpg"></div> 
+                    <div class="face back">
+                      <ul class="playlist">
+                        <li audiourl="attention.mp3" cover="cover1.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Attention</li>
+                        <li audiourl="ghost.mp3" cover="cover2.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Ghost</li>
+                        <li audiourl="riley.mp3" cover="cover3.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Riley</li>
+                      </ul>
+                    </div> 
+                  </div> 
+                </div> 
+              </div>
+
+              <div class="col-md-4 al-cover">
+                <div class="flip"> 
+                  <div class="card"> 
+                    <div class="face front"><img src="images/two.jpg"></div> 
+                    <div class="face back">
+                      <ul class="playlist">
+                        <li audiourl="glow.mp3" cover="cover1.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Glow</li>
+                        <li audiourl="mia.mp3" cover="cover2.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Mia</li>
+                        <li audiourl="versed.mp3" cover="cover3.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Versed</li>
+                        <li audiourl="goosestep.mp3" cover="cover3.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> GooseStep</li>
+                      </ul>
+                    </div> 
+                  </div> 
+                </div> 
+              </div>
+
+              <div class="col-md-4 al-cover">
+                <div class="flip"> 
+                  <div class="card"> 
+                    <div class="face front"><img src="images/three.jpg"></div> 
+                    <div class="face back">
+                     <ul class="playlist">
+                      <li audiourl="glow.mp3" cover="cover1.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Glow</li>
+                      <li audiourl="mia.mp3" cover="cover2.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Mia</li>
+                      <li audiourl="versed.mp3" cover="cover3.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> Versed</li>
+                      <li audiourl="goosestep.mp3" cover="cover3.jpg" artist="The Fuss"><i class="fa fa-play-circle-o"></i> GooseStep</li>
+                    </ul></div> 
+                  </div> 
+                </div>
+              </div>
+
             </div>
+
+
+
             <ul class="playlist hidden">
               <li audiourl="glow.mp3" cover="cover1.jpg" artist="The Fuss">Glow</li>
               <li audiourl="mia.mp3" cover="cover2.jpg" artist="The Fuss">Mia</li>
@@ -85,9 +152,9 @@
               <li audiourl="goosestep.mp3" cover="cover3.jpg" artist="The Fuss">GooseStep</li>
             </ul>
 
-            <div id="playerdownload" ng-show="isDLViewable">
+          <!--   <div id="playerdownload" ng-show="isDLViewable">
               <a href="music/The_Fuss_Two(EP).zip"><i class="fa fa-cloud-download"></i></a>
-            </div>
+            </div> -->
 
           </div> <!-- End Music -->
 
@@ -102,14 +169,14 @@
                 <div class="datebox-month">FEB</div>
                 <div class="datebox-date">19th <br> 
                   <span class="datebox-day">SAT</span></div>
+                </div>
               </div>
-            </div>
-            <div class="col-xs-3 bands">
-             <i class="fa fa-location-arrow"></i> Lefty's Live Music
-            </div>
-            <div class="col-xs-7">
+              <div class="col-xs-3 bands">
+               <i class="fa fa-location-arrow"></i> Lefty's Live Music
+             </div>
+             <div class="col-xs-7">
               <div class="bands">
-              The Fuss | Ira Grace & The Bible Belt Prophets | The Shameless Pursuit
+                The Fuss | Ira Grace & The Bible Belt Prophets | The Shameless Pursuit
               </div>
             </div>
           </div>
@@ -122,140 +189,171 @@
                 <div class="datebox-month">DEC</div>
                 <div class="datebox-date">12th <br> 
                   <span class="datebox-day">SAT</span></div>
+                </div>
+              </div>
+              <div class="col-xs-3 bands">
+                <i class="fa fa-location-arrow"></i> Gas Lamp
+              </div>
+              <div class="col-xs-7">
+                <div class="bands">
+                  The Fuss - Brother O' Brother - Dead King Chuck
+                </div>
               </div>
             </div>
-            <div class="col-xs-3 bands">
-            <i class="fa fa-location-arrow"></i> Gas Lamp
-            </div>
-            <div class="col-xs-7">
-              <div class="bands">
-              The Fuss - Brother O' Brother - Dead King Chuck
+
+            <hr class="band-divider">
+
+            <div class="row band-row">
+              <div class="col-xs-2">
+                <div class="datebox">
+                  <div class="datebox-month">OCT</div>
+                  <div class="datebox-date">31st <br> 
+                    <span class="datebox-day">SAT</span></div>
+                  </div>
+                </div>
+                <div class="col-xs-3 bands">
+                  <i class="fa fa-location-arrow"></i> Lefty's Live Music
+                </div>
+                <div class="col-xs-7">
+                  <div class="bands">
+                    Holy White Hounds | Red Daughters | The Other Brothers | The Fuss
+                  </div>
+                </div>
               </div>
+
+
+              <hr class="band-divider">
+
+              <div class="row band-row">
+                <div class="col-xs-2">
+                  <div class="datebox">
+                    <div class="datebox-month">OCT</div>
+                    <div class="datebox-date">21st <br> 
+                      <span class="datebox-day">WED</span></div>
+                    </div>
+                  </div>
+                  <div class="col-xs-3 bands">
+                    <i class="fa fa-location-arrow"></i> Gas Lamp
+                  </div>
+                  <div class="col-xs-7">
+                    <div class="bands">
+                      The Fuss - Brother O' Brother - Dead King Chuck
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- End shows div -->
+
+              <div id="photos" class="show-hide" ng-show="photosToggle">
+
+                <div id="links">
+                  <a href="images/joey.jpg" title="Joey | Guitar/Vocals">
+                    <img src="images/thumbnails/joey_t.jpg" alt="Joey">
+                  </a>
+                  <a href="images/braden.jpg" title="Braden | Drums">
+                    <img src="images/thumbnails/braden_t.jpg" alt="Braden">
+                  </a>
+                  <a href="images/matt.jpg" title="Matt | Bass">
+                    <img src="images/thumbnails/matt_t.jpg" alt="matt">
+                  </a>
+                  <a href="images/gaslamp.jpg" title="GasLamp">
+                    <img src="images/thumbnails/gaslamp_t.jpg" alt="matt">
+                  </a>
+                  <a href="images/hounds-show.jpg" title="Holy White Hounds Cd Release">
+                    <img src="images/thumbnails/hounds-show_t.jpg" alt="hounds cd release show">
+                  </a>
+                  <a href="images/stairs.jpg" title="Joey">
+                    <img src="images/thumbnails/stairs_t.jpg" alt="vaudevill mews">
+                  </a>
+                  <a href="images/braden-record.jpg" title="Braden">
+                    <img src="images/thumbnails/braden-record_t.jpg" alt="braden">
+                  </a>
+                  <a href="images/matt-joey.jpg" title="Matt - Joey">
+                    <img src="images/thumbnails/matt-joey_t.jpg" alt="matt and joey">
+                  </a>
+                  <a href="images/mirror.jpg" title="The Fuss">
+                    <img src="images/thumbnails/mirror_t.jpg" alt="the fuss">
+                  </a>
+                  <a href="images/phonebooth.jpg" title="Vaudeville Mews">
+                    <img src="images/thumbnails/phonebooth_t.jpg" alt="vaudeville mews">
+                  </a>
+                  <a href="images/show.jpg" title="Lefty's">
+                    <img src="images/thumbnails/show_t.jpg" alt="lefty's">
+                  </a>
+                </div>
+                <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+                <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                  <div class="slides"></div>
+                  <h3 class="title"></h3>
+                  <a class="prev">‹</a>
+                  <a class="next">›</a>
+                  <a class="close">×</a>
+                  <a class="play-pause"></a>
+                  <ol class="indicator"></ol>
+                </div>
+
+              </div><!-- End photo div -->
+
+              <div id="bottomLinks"> 
+                <table style="margin: 0 auto;">
+                  <tr>
+                    <td><a href="https://www.facebook.com/whatsthefussabout">
+                      <i class="fa fa-facebook"></i>
+                    </a></td> 
+                    <td><a href="https://twitter.com/wearethefuss">
+                      <i class="fa fa-twitter"></i>
+                    </a></td> 
+                    <td id="toggleinstagram"><a href="https://instagram.com/wearethefuss">
+                      <i class="fa fa-instagram"></i>
+                    </a></td> 
+                    <td><a href="http://whatthefuss.bandcamp.com">
+                      <i class="fa fa-music"></i>
+                    </a></td>
+                    <td><a href="market.html">
+                      <i class="fa fa-shopping-cart"></i>
+                    </a></td>
+                  </tr>
+                </table>
+                <div class="fb-like" data-href="https://www.facebook.com/whatsthefussabout" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+
+              </div> <!-- END Bottom Page Links -->
+
+            </div>   <!--End Site-->
+
+          </div> <!--End Container-->
+        </div>  <!--End Site Wrapper-->
+
+
+        <div id="footerSlideContainer" >
+          <div id="footerSlideButton"></div>
+          <div id="footerSlideContent">
+            <div id="footerSlideText">
+              <div class="row">
+                <div class="col-xs-2">
+                  <div class="title"></div>
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-2">
+                 <div class="play"><i class="fa fa-play"></i></div>
+                 <div class="pause"><i class="fa fa-pause"></i></div>
+               </div>
+               <div class="col-xs-2">
+                <div class="rew"><i class="fa fa-fast-backward"></i></div>
+              </div>
+              <div class="col-xs-2">
+                <div class="fwd"><i class="fa fa-fast-forward"></i></div>
+              </div>
+              <div class="col-xs-2"><i class="fa fa-lg fa-arrow-circle-down"></i></div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <hr class="band-divider">
-
-                    <div class="row band-row">
-            <div class="col-xs-2">
-              <div class="datebox">
-                <div class="datebox-month">OCT</div>
-                <div class="datebox-date">31st <br> 
-                  <span class="datebox-day">SAT</span></div>
-              </div>
-            </div>
-            <div class="col-xs-3 bands">
-              <i class="fa fa-location-arrow"></i> Lefty's Live Music
-            </div>
-            <div class="col-xs-7">
-              <div class="bands">
-              Holy White Hounds | Red Daughters | The Other Brothers | The Fuss
-              </div>
-            </div>
-          </div>
-
-
-          <hr class="band-divider">
-
-          <div class="row band-row">
-            <div class="col-xs-2">
-              <div class="datebox">
-                <div class="datebox-month">OCT</div>
-                <div class="datebox-date">21st <br> 
-                  <span class="datebox-day">WED</span></div>
-              </div>
-            </div>
-            <div class="col-xs-3 bands">
-            <i class="fa fa-location-arrow"></i> Gas Lamp
-            </div>
-            <div class="col-xs-7">
-              <div class="bands">
-              The Fuss - Brother O' Brother - Dead King Chuck
-              </div>
-            </div>
-          </div>
-        </div> <!-- End shows div -->
-
-        <div id="photos" class="show-hide" ng-show="photosToggle">
-
-          <div id="links">
-            <a href="images/joey.jpg" title="Joey | Guitar/Vocals">
-              <img src="images/thumbnails/joey_t.jpg" alt="Joey">
-            </a>
-            <a href="images/braden.jpg" title="Braden | Drums">
-              <img src="images/thumbnails/braden_t.jpg" alt="Braden">
-            </a>
-            <a href="images/matt.jpg" title="Matt | Bass">
-              <img src="images/thumbnails/matt_t.jpg" alt="matt">
-            </a>
-            <a href="images/gaslamp.jpg" title="GasLamp">
-              <img src="images/thumbnails/gaslamp_t.jpg" alt="matt">
-            </a>
-            <a href="images/hounds-show.jpg" title="Holy White Hounds Cd Release">
-              <img src="images/thumbnails/hounds-show_t.jpg" alt="hounds cd release show">
-            </a>
-            <a href="images/stairs.jpg" title="Joey">
-              <img src="images/thumbnails/stairs_t.jpg" alt="vaudevill mews">
-            </a>
-            <a href="images/braden-record.jpg" title="Braden">
-              <img src="images/thumbnails/braden-record_t.jpg" alt="braden">
-            </a>
-            <a href="images/matt-joey.jpg" title="Matt - Joey">
-              <img src="images/thumbnails/matt-joey_t.jpg" alt="matt and joey">
-            </a>
-            <a href="images/mirror.jpg" title="The Fuss">
-              <img src="images/thumbnails/mirror_t.jpg" alt="the fuss">
-            </a>
-            <a href="images/phonebooth.jpg" title="Vaudeville Mews">
-              <img src="images/thumbnails/phonebooth_t.jpg" alt="vaudeville mews">
-            </a>
-            <a href="images/show.jpg" title="Lefty's">
-              <img src="images/thumbnails/show_t.jpg" alt="lefty's">
-            </a>
-          </div>
-          <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-          <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-            <div class="slides"></div>
-            <h3 class="title"></h3>
-            <a class="prev">‹</a>
-            <a class="next">›</a>
-            <a class="close">×</a>
-            <a class="play-pause"></a>
-            <ol class="indicator"></ol>
-          </div>
-
-        </div><!-- End photo div -->
-
-        <a name="content"></a>
-
-        <div id="bottomLinks"> 
-          <table style="margin: 0 auto;">
-            <tr>
-              <td><a href="https://www.facebook.com/whatsthefussabout">
-                <i class="fa fa-facebook"></i>
-              </a></td> 
-              <td><a href="https://twitter.com/wearethefuss">
-                <i class="fa fa-twitter"></i>
-              </a></td> 
-              <td id="toggleinstagram"><a href="https://instagram.com/wearethefuss">
-                <i class="fa fa-instagram"></i>
-              </a></td> 
-              <td><a href="http://whatthefuss.bandcamp.com">
-                <i class="fa fa-music"></i>
-              </a></td>
-              <td><a href="market.html">
-                <i class="fa fa-shopping-cart"></i>
-              </a></td>
-            </tr>
-          </table>
-          <div class="fb-like" data-href="https://www.facebook.com/whatsthefussabout" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-        </div> <!-- END Bottom Page Links -->
-
-      </div>   <!--End Site-->
-
-    </div> <!--End Container-->
-  </div>  <!--End Site Wrapper-->
-
+      <div id="show-music-btn" class="row">
+        <div class="col-xs-10"></div>
+        <div class="col-xs-2">
+          <div ><i class="fa fa-lg fa-arrow-circle-up"></i></div>
+        </div>
+      </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -266,6 +364,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="http://code.angularjs.org/1.4.9/angular-animate.min.js"></script>
     <script src="js/blueimp/blueimp-gallery.js"></script>
+    <script src="js/blueimp/blueimp-gallery-video.js"></script>
+    <script src="js/blueimp/blueimp-gallery-youtube.js"></script>
     <script src="js/blueimp/blueimp-gallery-fullscreen.js"></script>
     <script src="js/blueimp/blueimp-gallery-indicator.js"></script>
     <script src="js/angular.js"></script>

@@ -3,6 +3,32 @@ var isDLViewable = true;
 
 //Document Ready
 $(document).ready(function(){
+          $("#show-music-btn").hide();
+          $("#footerSlideContainer").hide();
+          $('.play').hide();
+
+
+$(function () {
+  
+ blueimp.Gallery([
+        {
+            title: 'The Fuss - The Knot',
+            type: 'text/html',
+            youtube: 'NM_smETOX3c',
+            poster: 'images/two.jpg'
+        },
+        {
+            title: 'The Fuss - Supression (Live)',
+            type: 'text/html',
+            youtube: 'Y8VOzHv0lFg',
+            poster: 'images/one.jpg'
+        }
+    ], {
+        container: '#blueimp-video-carousel',
+        carousel: false
+    });
+});
+
 
 //CONTROL Download view
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -10,7 +36,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
     // initialization - first element in playlist
-    initAudio($('.playlist li:first-child'));
+    initAudio($('.playlist li:first-of-type'));
 
     // set volume
     song.volume = 0.8;
@@ -39,6 +65,20 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
         stop: function(event,ui) {}
     });
 
+    // FOOTER 
+  function footer() {
+    var open = false;
+    $('#footerSlideButton').click(function () {
+      if(open === false) {
+        $('#footerSlideContainer').show( "slow" );
+        open = true;
+      } else {
+        $('#footerSlideContainer').hide("slow");
+        open = false;
+      }
+    }); 
+  };  
+
 });
 
 
@@ -58,6 +98,29 @@ $("#togglemusic").click(function() {
 });
 
 
+/* card flip */
+$(".flip").click(function(){
+
+  if ($(this).find(".card").hasClass("been-flipped")) {
+    return false;
+  }
+
+  $(this).find(".card").toggleClass("flipped");
+
+  $(".card").each(function() {
+    if ( $( this ).hasClass( "been-flipped" )) {
+      $( this ).removeClass("been-flipped");
+      $( this ).toggleClass("flipped");
+      return false;
+    };
+
+ });
+
+  $(this).find(".card").addClass("been-flipped");
+  return false; 
+});
+
+
 // AUDIO PLAYER
   // inner variables
     var song;
@@ -71,7 +134,7 @@ $("#togglemusic").click(function() {
         var cover = elem.attr('cover');
         var artist = elem.attr('artist');
 
-        $('.player .title').text(title);
+        $('.title').text(title);
         $('.player .artist').text(artist);
         $('.player .cover').css('background-image','url(images/' + cover+')');;
 
@@ -86,19 +149,26 @@ $("#togglemusic").click(function() {
         $('.playlist li').removeClass('active');
         elem.addClass('active');
     }
+
     function playAudio() {
+
+        $("#footerSlideContainer").show("slow");
+
         song.play();
+        $("#musicstat").show();
 
         tracker.slider("option", "max", song.duration);
 
-        $('.play').addClass('hidden');
-        $('.pause').addClass('visible');
+        $('.play').toggle();
+        $('.pause').toggle();
     }
+
     function stopAudio() {
         song.pause();
+        $("#musicstat").hide();
 
-        $('.play').removeClass('hidden');
-        $('.pause').removeClass('visible');
+        $('.play').toggle();
+        $('.pause').toggle();
     }
 
      // play click
@@ -113,19 +183,29 @@ $("#togglemusic").click(function() {
         e.preventDefault();
 
         stopAudio();
+        $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
+
     });
+
+    $(".fa-times").click(function() {
+$("#videoModal").addClass("hidden");
+});
 
        // forward click
     $('.fwd').click(function (e) {
         e.preventDefault();
 
         stopAudio();
+        $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
 
         var next = $('.playlist li.active').next();
+        next.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+
         if (next.length == 0) {
             next = $('.playlist li:first-child');
         }
         initAudio(next);
+        playAudio();
     });
 
     // rewind click
@@ -133,27 +213,47 @@ $("#togglemusic").click(function() {
         e.preventDefault();
 
         stopAudio();
+        $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
 
         var prev = $('.playlist li.active').prev();
+        prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
         if (prev.length == 0) {
             prev = $('.playlist li:last-child');
         }
         initAudio(prev);
+        playAudio();
     });
 
         // show playlist
     $('.pl').click(function (e) {
         e.preventDefault();
-
-        $('.playlist').fadeIn(300);
+        $('.playlist').removeClass('hidden').fadeIn(300);
     });
+
+    $('.fa-arrow-circle-down').click(function () {
+      $("#footerSlideContainer").hide("slow");
+      $("#show-music-btn").show("slow");
+
+    });
+
+     $('.fa-arrow-circle-up').click(function () {
+        $("#footerSlideContainer").show("slow");
+        $("#show-music-btn").hide("slow");
+    });
+
 
     // playlist elements - click
     $('.playlist li').click(function () {
+      $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
+        $(this).find('.fa-play-circle-o').removeClass("fa-play-circle-o").addClass("fa-spinner fa-spin");
         stopAudio();
         initAudio($(this));
+        playAudio();
     });
 
 
   //AUDIO PLAYER END
+
+
+
 
