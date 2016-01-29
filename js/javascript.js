@@ -5,12 +5,19 @@ var isDLViewable = true;
 $(document).ready(function(){
           $("#show-music-btn").hide();
           $("#footerSlideContainer").hide();
-          $('.play').hide();
+          $('.pause').hide();
+          $('#myModal').modal("show");
 
 
 $(function () {
   
  blueimp.Gallery([
+        {
+            title: 'The Fuss - Becoming The Worm',
+            type: 'text/html',
+            youtube: 'ea82ZUfbePw',
+            poster: 'images/videoHeading.png'
+        },
         {
             title: 'The Fuss - The Knot',
             type: 'text/html',
@@ -148,6 +155,7 @@ $(".flip").click(function(){
 
         $('.playlist li').removeClass('active');
         elem.addClass('active');
+
     }
 
     function playAudio() {
@@ -159,16 +167,18 @@ $(".flip").click(function(){
 
         tracker.slider("option", "max", song.duration);
 
-        $('.play').toggle();
-        $('.pause').toggle();
+        $('.play').hide();
+        $('.pause').show();
+        $(".last-played").removeClass("fa-play-circle-o .last-played").addClass("fa-spinner fa-spin");
     }
 
     function stopAudio() {
         song.pause();
         $("#musicstat").hide();
 
-        $('.play').toggle();
-        $('.pause').toggle();
+        $('.play').show();
+        $('.pause').hide();
+        $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o last-played");
     }
 
      // play click
@@ -183,11 +193,9 @@ $(".flip").click(function(){
         e.preventDefault();
 
         stopAudio();
-        $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
-
     });
 
-    $(".fa-times").click(function() {
+    $(".vidclose").click(function() {
 $("#videoModal").addClass("hidden");
 });
 
@@ -196,6 +204,7 @@ $("#videoModal").addClass("hidden");
         e.preventDefault();
 
         stopAudio();
+        $(".last-played").removeClass("last-played");
         $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
 
         var next = $('.playlist li.active').next();
@@ -213,6 +222,7 @@ $("#videoModal").addClass("hidden");
         e.preventDefault();
 
         stopAudio();
+        $(".last-played").removeClass("last-played");
         $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
 
         var prev = $('.playlist li.active').prev();
@@ -244,11 +254,15 @@ $("#videoModal").addClass("hidden");
 
     // playlist elements - click
     $('.playlist li').click(function () {
+      $(".last-played").removeClass("last-played");
       $(".fa-spinner").removeClass("fa-spinner fa-spin").addClass("fa-play-circle-o");
         $(this).find('.fa-play-circle-o').removeClass("fa-play-circle-o").addClass("fa-spinner fa-spin");
         stopAudio();
         initAudio($(this));
         playAudio();
+
+        $('.play').hide();
+        $('.pause').show();
     });
 
 
