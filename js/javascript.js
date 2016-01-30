@@ -1,41 +1,6 @@
-//GLOBALS
-var isDLViewable = true;
-
-//Document Ready
 $(document).ready(function(){
-          $("#show-music-btn").hide();
-          $("#footerSlideContainer").hide();
-          $('.pause').hide();
-          $('#myModal').modal("show");
 
-
-$(function () {
-  
- blueimp.Gallery([
-        {
-            title: 'The Fuss - Becoming The Worm',
-            type: 'text/html',
-            youtube: 'ea82ZUfbePw',
-            poster: 'images/videoHeading.png'
-        },
-        {
-            title: 'The Fuss - The Knot',
-            type: 'text/html',
-            youtube: 'NM_smETOX3c',
-            poster: 'images/two.jpg'
-        },
-        {
-            title: 'The Fuss - Supression (Live)',
-            type: 'text/html',
-            youtube: 'Y8VOzHv0lFg',
-            poster: 'images/one.jpg'
-        }
-    ], {
-        container: '#blueimp-video-carousel',
-        carousel: false
-    });
-});
-
+$('[data-toggle="tooltip"]').tooltip(); 
 
 //CONTROL Download view
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -43,7 +8,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
     // initialization - first element in playlist
-    initAudio($('.playlist li:first-of-type'));
+    initAudio($('.playlist1:first li:first-of-type'));
 
     // set volume
     song.volume = 0.8;
@@ -141,7 +106,7 @@ $(".flip").click(function(){
         var cover = elem.attr('cover');
         var artist = elem.attr('artist');
 
-        $('.title').text(title);
+        $('.songtitle').text(title);
         $('.player .artist').text(artist);
         $('.player .cover').css('background-image','url(images/' + cover+')');;
 
@@ -196,8 +161,36 @@ $(".flip").click(function(){
     });
 
     $(".vidclose").click(function() {
-$("#videoModal").addClass("hidden");
-});
+      $("#videoModal").addClass("hidden");
+    });
+    
+    $(".fa-video-camera").click(function() {
+      $(function () {
+     blueimp.Gallery([
+     {
+      title: 'The Fuss - Becoming The Worm',
+      type: 'text/html',
+      youtube: 'ea82ZUfbePw',
+      poster: 'images/videoHeading.png'
+    },
+    {
+      title: 'The Fuss - The Knot',
+      type: 'text/html',
+      youtube: 'NM_smETOX3c',
+      poster: 'images/two.jpg'
+    },
+    {
+      title: 'The Fuss - Supression (Live)',
+      type: 'text/html',
+      youtube: 'Y8VOzHv0lFg',
+      poster: 'images/one.jpg'
+    }
+    ], {
+      container: '#blueimp-video-carousel',
+      carousel: false
+    });
+   });
+    });
 
        // forward click
     $('.fwd').click(function (e) {
@@ -211,8 +204,19 @@ $("#videoModal").addClass("hidden");
         next.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
 
         if (next.length == 0) {
-            next = $('.playlist li:first-child');
+          var elem = $('.playlist li.active');
+          if (elem.text() == " Riley" ) {
+            next = $('.playlist2 li:first-child');
+           next.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+          } else if (elem.text() == ' GooseStep' ) {
+            next = $('.playlist3 li:first-child');
+            next.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+          } else {
+            next = $('.playlist1 li:first-child');
+           next.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+          }
         }
+
         initAudio(next);
         playAudio();
     });
@@ -228,8 +232,19 @@ $("#videoModal").addClass("hidden");
         var prev = $('.playlist li.active').prev();
         prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
         if (prev.length == 0) {
-            prev = $('.playlist li:last-child');
+          var elem = $('.playlist li.active');
+          if (elem.text() == ' Attention' ) {
+            prev = $('.playlist3 li:last-child');
+            prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+          } else if (elem.text() == ' Glow' ) {
+            prev = $('.playlist1 li:last-child');
+            prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+          } else {
+            prev = $('.playlist1 li:last-child');
+            prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
+          }
         }
+
         initAudio(prev);
         playAudio();
     });
@@ -243,7 +258,7 @@ $("#videoModal").addClass("hidden");
     $('.fa-arrow-circle-down').click(function () {
       $("#footerSlideContainer").hide("slow");
       $("#show-music-btn").show("slow");
-
+      $('.fa-arrow-circle-up').show();
     });
 
      $('.fa-arrow-circle-up').click(function () {
@@ -261,10 +276,10 @@ $("#videoModal").addClass("hidden");
         initAudio($(this));
         playAudio();
 
+        $('.fa-arrow-circle-up').hide();
         $('.play').hide();
         $('.pause').show();
     });
-
 
   //AUDIO PLAYER END
 

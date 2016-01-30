@@ -1,126 +1,11 @@
-/*
- * Globals
- */
-th {
-  text-align: center; 
-}
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #ccc;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-.modal-title {
-  color: black;
-}
-
 .center {
   margin: 0 auto;
-}
-
-.album {
-  color: #000;
-}
-
-.divider {
-  color: gray;
-}
-
-a.musicLink {
-  color: #fff;
 }
 
 /*Spacing between collasped pictures*/
 [class*="col-"] {
     background-clip: padding-box;
     border: 10px solid transparent;
-}
-
-/*
- * Base structure
- */
-
-html,
-body {
-  font-family: Verdana;
-  height: 100%;
-}
-
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
-
-img.bg {
- position: fixed; 
-  top: 0; 
-  left: 0; 
-  
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
-
-/* Tables */
-tr.tr-hover:hover a {
-  color: black;
-  cursor: pointer;
-}
-
-tr.tr-hover:hover {
-  color: black;
-  cursor: pointer;
-}
-
-
-tr.tr-hover:active {
-  color:  #e67e22;
-  cursor: pointer;
-}
-
-tr.tr-hoverP:hover {
-  color: black;
-  cursor: pointer;
-}
-
-tr.tr-hoverP:active {
-  color:  #9b59b6;
-  cursor: pointer;
-}
-
-/* Tables END*/
-
-h1.fuss-heading {
-	font-family: Anders;
-	font-size: 12em;
-	font-weight: bolder;
-  text-align: center;
-  padding-top: 10px;
-}
-
-p.songname {
-  color: #ccc;
-}
-
-.divider {
-  padding: 10px;
-}
-
-.spacer {
-  height: 30px;
 }
 
 /*SHOWS*/
@@ -190,13 +75,6 @@ border-color: #fff;
 /*SHOWS END*/
 
 
-/*Photos*/
-
-.photo-width {
-  width: 100%;
-}
-
-
 /* Bottom Navigation*/
 .table {
   display: table;   /* Allow the centering to work */
@@ -219,16 +97,6 @@ ul#horizontal-list li {
   cursor: pointer;
 }
 
-.fa-arrow-left:hover {
-    color: #9b59b6;
-}
-
-
-.nospace {
-  padding: 0;
-  margin: 0;
-}
-
 .nav:active {
   color: black;
 }
@@ -237,11 +105,9 @@ ul#horizontal-list li {
   color: #1abc9c;
 }
 
-
 .photos-on {
   color: #9b59b6;
 }
-
 
 .music-on {
   color: #e67e22;
@@ -258,17 +124,6 @@ ul#horizontal-list li {
 }
 /*Load Font End*/
 
-.show-hide {
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.5s;
-}
-
-.show-hide.ng-hide {
-  opacity:0;
-  -webkit-transition:all linear 0.0s;
-  transition:all linear 0.0s;
-}
-/* End Load Font*/
 
 /*ICONS*/
 a .fa {
@@ -301,23 +156,14 @@ a .fa-shopping-cart:hover {
   font-size: 26px;
 }
 
-@media (max-width: 600px) {
-  h1.fuss-heading {
-    font-size: 5em;
-  }
+a .fa-video-camera:hover {
+  color: #1abc9c;
 }
 
-@media (max-width: 992px) {
-  h1.fuss-heading {
-    font-size: 8em;
-  }
-}
 /*ICONS END*/ 
 
 
 /*CARD FLIP */
-
-
 .al-cover {
   height: 315;
   width: 315;
@@ -391,9 +237,9 @@ a .fa-shopping-cart:hover {
 .fa-play-alb {
   position: absolute;
   z-index: 2;
-  color: #ccc;
+  color: #a6a6a6;
   opacity: .9;
-  padding: 140px;
+  padding: 130px;
 }
 .fa-play-alb:hover {
     color: #fff;
@@ -405,10 +251,6 @@ a .fa-shopping-cart:hover {
 /*CARD FLIP END*/
 
 /*player*/
-.example {
-    margin: 50px auto 0;
-    width: 400px;
-}
 .player {
     background: transparent url("../images/spr.png") no-repeat scroll center top;
     height: 162px;
@@ -416,7 +258,7 @@ a .fa-shopping-cart:hover {
     width: 326px;
     z-index: 2;
 }
-.title, .artist {
+.songtitle, .artist {
     font-family: verdana;
     left: 167px;
 
@@ -424,7 +266,7 @@ a .fa-shopping-cart:hover {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-.title {
+.songtitle {
     color: #FFFFFF;
     font-size: 14px;
     font-weight: bold;
@@ -435,106 +277,7 @@ a .fa-shopping-cart:hover {
     font-size: 12px;
     top: 40px;
 }
-.pl {
-    background: transparent url("../images/spr.png") no-repeat scroll -274px -175px;
-    cursor: pointer;
-    height: 34px;
-    left: 270px;
-    position: absolute;
-    top: 20px;
-    width: 32px;
-}
-.pl:hover {
-    top: 21px;
-}
-.cover {
-    background: transparent url(../images/cover.jpg) no-repeat scroll center top;
-    border-radius: 5px 5px 5px 5px;
-    height: 94px;
-    left: 60px;
-    position: absolute;
-    top: 20px;
-    width: 94px;
-}
-.controls {
-    cursor: pointer;
-    height: 23px;
-    left: 167px;
-    position: absolute;
-    top: 65px;
-    width: 138px;
-}
-.controls .play, .controls .pause, .controls .rew, .controls .fwd {
-    background: transparent url("../images/spr.png") no-repeat scroll 0 0;
-    float: left;
-    height: 100%;
-    width: 33%;
-}
-.controls .play {
-    background-position: -8px -171px;
-}
-.controls .pause {
-    background-position: -8px -198px;
-    display: none;
-}
-.controls .rew {
-    background-position: -54px -171px;
-}
-.controls .fwd {
-    background-position: -100px -171px;
-}
-.controls .play:hover {
-    background-position: -8px -170px;
-}
-.controls .pause:hover {
-    background-position: -8px -197px;
-}
-.controls .rew:hover {
-    background-position: -54px -170px;
-}
-.controls .fwd:hover {
-    background-position: -100px -170px;
-}
-.hidden {
-    display: none;
-}
-.controls .visible {
-    display: block;
-}
-.volume {
-    height: 11px;
-    left: 186px;
-    position: absolute;
-    top: 96px;
-    width: 112px;
-}
-.tracker {
-    height: 15px;
-    left: 20px;
-    position: absolute;
-    top: 126px;
-    width: 285px;
-}
-.ui-slider-range {
-    background: transparent url("../images/spr.png") no-repeat scroll 5px -222px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ui-slider-handle {
-    cursor: pointer;
-    height: 10px;
-    margin-left: -5px;
-    position: absolute;
-    top: 2px;
-    width: 10px;
-    z-index: 2;
-}
-.volume .ui-slider-handle {
-    background: url("../images/spr.png") no-repeat scroll -201px -188px rgba(0, 0, 0, 0);
-    height: 13px;
-    width: 13px;
-}
+  
 .playlist {
     background-color: #000;
     border-radius: 5px 5px 5px 5px;
@@ -582,25 +325,10 @@ a .fa-shopping-cart:hover {
   font-family: DejaVuSansBook, Sans-Serif;
 }
 
-.modal {
-  text-align: center;
+#blueimp-video-carousel{
+  position: fixed;
+  top: 0;
 }
-
-@media screen and (min-width: 768px) { 
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-}
-
-.modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-}
-
 .toggle {
 opacity: .8;  
 }
