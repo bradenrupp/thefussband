@@ -240,7 +240,7 @@ $(".flip").click(function(){
             prev = $('.playlist1 li:last-child');
             prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
           } else {
-            prev = $('.playlist1 li:last-child');
+            prev = $('.playlist2 li:last-child');
             prev.find(".fa-play-circle-o").addClass("fa-spinner fa-spin");
           }
         }
