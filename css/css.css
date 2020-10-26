@@ -8,6 +8,27 @@
     border: 10px solid transparent;
 }
 
+.about {
+  top: 30px;
+  left: 415px;
+  position: absolute;
+  padding: 20px;
+  width: 400px;
+  height:400px;
+  color: #fff;
+  background-color: #000;
+  opacity: .9;
+}
+
+#exit {
+  position: inherit;
+  padding-top: 5px;
+  padding-right: 10px;
+  top: 0;
+  right: 0;
+
+}
+
 /*SHOWS*/
 .datebox {
   margin: 0 auto;

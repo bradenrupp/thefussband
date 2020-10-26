@@ -18,7 +18,7 @@
 <!-- Optional theme -->
 
 <!-- Custom styles for this template -->
-<link defer href="css/css.min.css" rel="stylesheet">
+<link defer href="css/css.css" rel="stylesheet">
 <link defer rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <link async rel="stylesheet" href="css/blueimp/blueimp-gallery.min.css">
@@ -40,7 +40,7 @@ body {
 }
 
 img.bg {
- position: fixed; 
+ position: absolute; 
  top: 0; 
  left: 0; 
 
@@ -100,8 +100,11 @@ h1.fuss-heading {
       <div class="container-fluid" ng-controller="toggleTitle">
 
         <div id="site">
-          <h1 class="fuss-heading"><span id="the">THE</span></h1>
-          <h1 class="fuss-heading"><span id="fu">FU</span><span id="ss">SS</span></h1>
+          <div>
+            <h1 class="fuss-heading"><span id="the">THE</span></h1>
+            <h1 class="fuss-heading"><span id="fu">FU</span><span id="ss">SS</span></h1>
+          </div>
+          
 
           <hr class="divider">
 
@@ -290,13 +293,13 @@ h1.fuss-heading {
                     <a href="images/beechwood.jpg" title="Beechwood Lounge">
                       <img src="images/thumbnails/beechwoodT.jpg" alt="beechwood lounge">
                     </a>
-                      <a href="images/joeyfront.jpg" title="Joe | Guitar">
+                    <a href="images/joeyfront.jpg" title="Joe | Guitar">
                       <img src="images/thumbnails/joeyfrontT.jpg" alt="joey">
                     </a>
-                     <a href="images/joeyleftys.jpg" title="Joey | Guitar/Vocals">
+                    <a href="images/joeyleftys.jpg" title="Joey | Guitar/Vocals">
                       <img src="images/thumbnails/joeyleftysT.jpg" alt="joey">
                     </a>
-                        <a href="images/mattleftys.jpg" title="Matt | Bass">
+                    <a href="images/mattleftys.jpg" title="Matt | Bass">
                       <img src="images/thumbnails/mattleftysT.jpg" alt="show view">
                     </a>
                     <a href="images/bradenstickleftys.jpg" title="Braden |Drums">
